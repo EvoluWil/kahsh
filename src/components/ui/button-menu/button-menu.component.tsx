@@ -24,8 +24,8 @@ interface ButtonMenuProps {
   icon: ImageSourcePropType;
   menuPosition?: 'center' | 'right';
   floatConfig: {
-    height: number;
-    width: number;
+    height?: number;
+    width?: number;
     top: number;
     left: number;
   };

@@ -125,10 +125,9 @@ export const Home: React.FC = () => {
             imageFloat={VrUser}
             icon={Vr}
             floatConfig={{
-              height: 465,
-              width: 600,
-              top: -16,
-              left: -290
+              height: 420,
+              top: -0,
+              left: -280
             }}
             iconConfig={{
               height: 260,
@@ -169,7 +168,7 @@ export const Home: React.FC = () => {
             }}
             iconConfig={{
               height: 160,
-              width: 160,
+              width: 200,
               top: -60,
               left: 660
             }}
@@ -197,9 +196,9 @@ export const Home: React.FC = () => {
             icon={Kahsh}
             floatConfig={{
               height: 480,
-              width: 380,
+              width: 460,
               top: 0,
-              left: -300
+              left: -360
             }}
             iconConfig={{
               height: 260,

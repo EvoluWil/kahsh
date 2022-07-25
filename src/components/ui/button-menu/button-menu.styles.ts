@@ -97,8 +97,8 @@ export const ButtonMenuLinkIcon = styled(Feather)<ButtonMenuText>`
 
 interface ButtonMenuIcon {
   config: {
-    height: number;
-    width: number;
+    height?: number;
+    width?: number;
     top: number;
     left: number;
   };
@@ -108,6 +108,7 @@ export const ButtonMenuIcon = styled.Image<ButtonMenuIcon>`
   left: ${({ config }) => RFWidth(config.left)}px;
   top: ${({ config }) => RFHeight(config.top)}px;
 
-  width: ${({ config }) => RFWidth(config.width)}px;
-  height: ${({ config }) => RFHeight(config.height)}px;
+  width: ${({ config }) =>
+    config?.width ? RFWidth(config.width) + 'px' : '70%'};
+  max-height: ${({ config }) => RFHeight(config.height) + 'px' || '100%'};
 `;

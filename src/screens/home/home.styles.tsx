@@ -39,10 +39,10 @@ export const Strip = styled.View`
 
 export const Ellipse = styled.View`
   position: absolute;
-  width: ${RFWidth(572)}px;
-  height: ${RFWidth(572)}px;
-  border-radius: ${RFWidth(572 / 2)}px;
-  right: -${RFWidth(120)}px;
-  top: -${RFHeight(40)}px;
+  width: ${RFHeight(480)}px;
+  height: ${RFHeight(480)}px;
+  border-radius: ${RFHeight(480 / 2)}px;
+  right: -${RFWidth(160)}px;
+  top: -${RFHeight(12)}px;
   background: ${({ theme }) => theme.colors.primary};
 `;
