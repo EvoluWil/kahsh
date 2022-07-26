@@ -71,6 +71,7 @@ export const ButtonMenuTextContainer = styled.div`
   justify-content: center;
   flex-direction: column;
   padding-right: 1rem;
+  padding-bottom: 0.5rem;
 `;
 
 interface ButtonMenuLinkProps {

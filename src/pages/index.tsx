@@ -50,7 +50,7 @@ const Home: NextPage = () => {
               top: -10,
               left: 86
             }}
-            url="https://kahsh.com/register"
+            url="https://kahsh.com/promo?key=c0c186eb5b1e8a25dab3fa814fbd7dd8"
           />
           <ButtonMenu
             title={

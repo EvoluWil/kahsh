@@ -19,7 +19,7 @@ export const ButtonMenuTitle = styled.div`
 `;
 
 export const ButtonMenuTextContainer = styled.div`
-  font-size: 0.6rem;
+  font-size: 0.5rem;
   line-height: 1rem;
 `;
 
