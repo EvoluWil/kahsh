@@ -1,61 +1,67 @@
-import styled from 'styled-components/native';
-import {
-  RFFontSize,
-  RFHeight,
-  RFWidth
-} from '../../../../utils/responsive-sizes.util';
+import styled from 'styled-components';
 
-export const HomeHeaderContainer = styled.View`
+export const HomeHeaderContainer = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+`;
+
+export const HomeHeaderBannerContainer = styled.div`
   position: relative;
-  flex-direction: row;
-  align-items: flex-start;
+  margin: -15% 12% 0;
+
+  .banner {
+    width: 100%;
+    max-width: 487px;
+    max-height: 757px;
+  }
+
+  .hand {
+    position: absolute;
+    bottom: 10%;
+    right: -40%;
+    width: 80%;
+    z-index: 1;
+  }
+`;
+
+export const HomeHeaderBannerContentContainer = styled.div`
+  display: flex;
+  flex-direction: column;
   justify-content: flex-start;
-  padding-left: ${RFWidth(95)}px;
+  align-items: center;
+
+  img {
+    width: 75%;
+    max-width: 430px;
+    margin-left: 10%;
+  }
 `;
 
-export const HomeHeaderImage = styled.Image`
-  border-radius: ${RFHeight(70)}px;
-  width: ${RFWidth(487)}px;
-  height: ${RFHeight(757)}px;
-  margin-top: -${RFHeight(109)}px;
-`;
-
-export const HomeHeaderContent = styled.View`
-  flex: 1;
-  align-items: flex-end;
-`;
-
-export const HomeHeaderContentLogo = styled.Image`
-  width: ${RFWidth(430)}px;
-  height: ${RFHeight(200)}px;
-  margin-right: ${RFWidth(21)}px;
-`;
-
-export const HomeHeaderContentDescription = styled.View`
-  flex: 1;
+export const HomeHeaderBannerContent = styled.div`
+  position: relative;
+  height: 100%;
   width: 100%;
-  align-items: flex-start;
+
+  display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
 
-  margin-right: -${RFWidth(79)}px;
-  padding-left: ${RFWidth(169)}px;
+  padding-left: 2rem;
+  margin-bottom: 1.5%;
 
-  background-color: ${({ theme }) => theme.colors.primary};
-  border-top-left-radius: ${RFHeight(70)}px;
-  border-bottom-left-radius: ${RFHeight(70)}px;
-`;
+  span {
+    position: absolute;
+    left: 0;
+    width: 100vw;
+    height: 100%;
+    border-radius: 1.5rem 0 0 1.5rem;
+    background-color: ${({ theme }) => theme.primary};
+  }
 
-export const HomeHeaderContentDescriptionText = styled.Text`
-  max-width: ${RFWidth(468)}px;
-  font-size: ${RFFontSize(50)}px;
-  font-family: ${({ theme }) => theme.font.regular};
-  color: ${({ theme }) => theme.colors.text};
-  text-align: left;
-`;
-
-export const HomeHeaderPointUp = styled.Image`
-  position: absolute;
-  width: ${RFWidth(350)}px;
-  left: 35%;
-  top: 10%;
+  p {
+    font-size: 0.8rem;
+    width: 100%;
+    z-index: 1;
+  }
 `;

@@ -1,81 +1,72 @@
 import React from 'react';
-import { ImageSourcePropType } from 'react-native';
-import { useTheme } from 'styled-components';
 import {
   ButtonMenuContainer,
-  ButtonMenuContent,
-  ButtonMenuIcon,
-  ButtonMenuImage,
+  ButtonMenuImageContainer,
   ButtonMenuLink,
-  ButtonMenuLinkIcon,
-  ButtonMenuLinkText,
-  ButtonMenuMessage,
-  ButtonMenuTitle
+  ButtonMenuTextContainer
 } from './button-menu.styles';
 
 interface ButtonMenuProps {
   bgColor?: string;
-  color?: string;
   title?: string | JSX.Element;
   message: string | JSX.Element;
   linkTitle: string | JSX.Element;
-  image: ImageSourcePropType;
-  imageFloat: ImageSourcePropType;
-  icon: ImageSourcePropType;
+  url: string;
+  linkColor?: string;
   menuPosition?: 'center' | 'right';
+  image: string;
+  imageFloat: string;
+  imageIcon: string;
   floatConfig: {
-    height?: number;
-    width?: number;
-    top: number;
-    left: number;
-  };
-  iconConfig: {
-    height: number;
     width: number;
     top: number;
     left: number;
   };
-  onPress: () => void;
-  widthMessage?: number;
+  iconConfig: {
+    width: number;
+    top: number;
+    left: number;
+  };
+  component?: JSX.Element;
 }
 export const ButtonMenu: React.FC<ButtonMenuProps> = ({
   bgColor,
-  color,
   title,
   message,
   linkTitle,
+  linkColor,
+  url,
   image,
   imageFloat,
   floatConfig,
-  icon,
+  imageIcon,
   iconConfig,
   menuPosition,
-  onPress,
-  widthMessage
+  component
 }) => {
-  const theme = useTheme();
   return (
-    <ButtonMenuContainer bgColor={bgColor}>
-      <ButtonMenuImage source={image}></ButtonMenuImage>
-      <ButtonMenuContent>
-        {!!title && <ButtonMenuTitle color={color}>{title}</ButtonMenuTitle>}
-        <ButtonMenuMessage widthMessage={widthMessage} color={color}>
-          {message}
-        </ButtonMenuMessage>
-        <ButtonMenuLink color={color} position={menuPosition} onPress={onPress}>
-          <ButtonMenuLinkText
-            color={color ? null : bgColor || theme.colors.primary}
-          >
-            {linkTitle}
-          </ButtonMenuLinkText>
-          <ButtonMenuLinkIcon
-            color={color ? null : bgColor || theme.colors.primary}
-            name="arrow-right"
-          />
+    <ButtonMenuContainer bgColor={bgColor || ''} iconConfig={iconConfig}>
+      {!!component && component}
+      <span />
+      <ButtonMenuImageContainer floatConfig={floatConfig}>
+        <img className="image" src={`/${image}`} alt={image} />
+        <img className="float" src={`/${imageFloat}`} alt={imageFloat} />
+      </ButtonMenuImageContainer>
+      <ButtonMenuTextContainer>
+        {!!title && title}
+        {message}
+        <ButtonMenuLink
+          linkColor={linkColor}
+          style={{ color: linkColor ? '#FFF' : bgColor }}
+          href={url}
+          rel="noreferrer"
+          target="_blank"
+          menuPosition={menuPosition}
+        >
+          {linkTitle} <i className="fa fa-arrow-right" />
         </ButtonMenuLink>
-      </ButtonMenuContent>
-      <ButtonMenuIcon source={imageFloat} config={floatConfig} />
-      <ButtonMenuIcon source={icon} config={iconConfig} />
+      </ButtonMenuTextContainer>
+      <img src={`/${imageIcon}`} alt={imageIcon} />
     </ButtonMenuContainer>
   );
 };
