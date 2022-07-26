@@ -45,7 +45,7 @@ export const ButtonMenu: React.FC<ButtonMenuProps> = ({
   component
 }) => {
   return (
-    <ButtonMenuContainer bgColor={bgColor || ''} iconConfig={iconConfig}>
+    <ButtonMenuContainer bgColor={bgColor || ''} iconConfig={iconConfig} href={url} rel="noreferrer" target="_blank">
       {!!component && component}
       <span />
       <ButtonMenuImageContainer floatConfig={floatConfig}>
@@ -58,9 +58,6 @@ export const ButtonMenu: React.FC<ButtonMenuProps> = ({
         <ButtonMenuLink
           linkColor={linkColor}
           style={{ color: linkColor ? '#FFF' : bgColor }}
-          href={url}
-          rel="noreferrer"
-          target="_blank"
           menuPosition={menuPosition}
         >
           {linkTitle} <i className="fa fa-arrow-right" />

@@ -9,7 +9,7 @@ interface ButtonMenuContainerProps {
   };
 }
 
-export const ButtonMenuContainer = styled.div<ButtonMenuContainerProps>`
+export const ButtonMenuContainer = styled.a<ButtonMenuContainerProps>`
   position: relative;
   margin: 0 auto;
   display: flex;
@@ -78,7 +78,7 @@ interface ButtonMenuLinkProps {
   linkColor?: string;
   menuPosition?: 'center' | 'right';
 }
-export const ButtonMenuLink = styled.a<ButtonMenuLinkProps>`
+export const ButtonMenuLink = styled.div<ButtonMenuLinkProps>`
   display: flex;
   align-items: center;
   justify-content: center;
